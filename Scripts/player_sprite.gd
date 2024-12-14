@@ -1,7 +1,6 @@
 extends Node2D
 
-@onready var head = $Head
-@onready var anim = $AnimationPlayer
+@onready var head = get_node("Head")
 
 func _process(_delta):
 	#Head rotation
