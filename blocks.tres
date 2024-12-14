@@ -1,0 +1,61 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://3vxowoulb711"]
+
+[ext_resource type="Texture2D" uid="uid://cyrgxpmp3qhfr" path="res://Graphics/texture_atlas.png" id="1_d1uav"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wt8ky"]
+texture = ExtResource("1_d1uav")
+0:0/next_alternative_id = 2
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:0/0/custom_data_0 = 1.0
+0:0/0/custom_data_1 = true
+0:0/0/custom_data_2 = "dirt"
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0/custom_data_0 = 1.0
+1:0/0/custom_data_1 = true
+1:0/0/custom_data_2 = "dirt"
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0/custom_data_0 = 8.0
+2:0/0/custom_data_2 = "stone"
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0/custom_data_0 = -1.0
+4:0/0 = 0
+4:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+4:0/0/custom_data_0 = 0.5
+4:0/0/custom_data_2 = "leaf"
+5:0/0 = 0
+5:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+5:0/0/custom_data_0 = 4.0
+5:0/0/custom_data_1 = true
+5:0/0/custom_data_2 = "oak_log"
+6:0/0 = 0
+6:0/0/physics_layer_1/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+6:0/0/custom_data_0 = 4.5
+6:0/0/custom_data_1 = true
+6:0/0/custom_data_2 = "oak_log"
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[resource]
+uv_clipping = true
+physics_layer_0/collision_layer = 1
+physics_layer_1/collision_layer = 2
+physics_layer_1/collision_mask = 2
+custom_data_layer_0/name = "time"
+custom_data_layer_0/type = 3
+custom_data_layer_1/name = "hand"
+custom_data_layer_1/type = 1
+custom_data_layer_2/name = "dropped_block"
+custom_data_layer_2/type = 4
+sources/0 = SubResource("TileSetAtlasSource_wt8ky")

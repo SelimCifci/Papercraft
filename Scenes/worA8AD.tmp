@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bx428fpproj0d"]
+
+[ext_resource type="Script" path="res://Scripts/map.gd" id="1_1imw5"]
+[ext_resource type="TileSet" uid="uid://3vxowoulb711" path="res://blocks.tres" id="1_1td75"]
+
+[node name="World" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_1td75")
+format = 2
+script = ExtResource("1_1imw5")
+width = 32
+height = 8
+flatness = 1

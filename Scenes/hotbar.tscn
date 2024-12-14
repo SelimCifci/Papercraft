@@ -1,0 +1,390 @@
+[gd_scene load_steps=24 format=3 uid="uid://o5bjerhd2gur"]
+
+[ext_resource type="Texture2D" uid="uid://cyrgxpmp3qhfr" path="res://Graphics/texture_atlas.png" id="1"]
+[ext_resource type="Script" path="res://Scripts/hotbar.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cns275ge3jy6u" path="res://Graphics/hotbar_slot.png" id="2_3xgx1"]
+[ext_resource type="LabelSettings" uid="uid://dlfu3w0o0echa" path="res://FontSettings/minecraftia.tres" id="3_bgao5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fl5mq"]
+atlas = ExtResource("2_3xgx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jlcg"]
+atlas = ExtResource("1")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="FontFile" id="9"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_haun4"]
+atlas = ExtResource("2_3xgx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnvod"]
+atlas = ExtResource("1")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3afwj"]
+atlas = ExtResource("2_3xgx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxgeg"]
+atlas = ExtResource("1")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ausbb"]
+atlas = ExtResource("2_3xgx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_53mr3"]
+atlas = ExtResource("1")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4e30"]
+atlas = ExtResource("2_3xgx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7us3"]
+atlas = ExtResource("1")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3yjx"]
+atlas = ExtResource("2_3xgx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jymxj"]
+atlas = ExtResource("1")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83784"]
+atlas = ExtResource("2_3xgx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rupnt"]
+atlas = ExtResource("1")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5k5o"]
+atlas = ExtResource("2_3xgx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6np1e"]
+atlas = ExtResource("1")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43d6j"]
+atlas = ExtResource("2_3xgx1")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l52x3"]
+atlas = ExtResource("1")
+region = Rect2(112, 112, 16, 16)
+
+[node name="Hotbar" type="Node2D"]
+script = ExtResource("2")
+
+[node name="Slot0" type="TextureRect" parent="."]
+light_mask = 2
+texture_filter = 1
+offset_right = 16.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_fl5mq")
+
+[node name="Item" type="TextureRect" parent="Slot0"]
+light_mask = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_2jlcg")
+
+[node name="Text" type="Node2D" parent="Slot0"]
+position = Vector2(7, 8)
+scale = Vector2(0.275, 0.275)
+
+[node name="Label" type="Label" parent="Slot0/Text"]
+light_mask = 2
+custom_minimum_size = Vector2(23, 28)
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 14.0
+offset_bottom = 14.0
+theme_override_fonts/font = SubResource("9")
+text = "0"
+label_settings = ExtResource("3_bgao5")
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Slot1" type="TextureRect" parent="."]
+light_mask = 2
+texture_filter = 1
+offset_left = 15.0
+offset_right = 31.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_haun4")
+
+[node name="Item" type="TextureRect" parent="Slot1"]
+light_mask = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_xnvod")
+
+[node name="Text" type="Node2D" parent="Slot1"]
+position = Vector2(7, 8)
+scale = Vector2(0.275, 0.275)
+
+[node name="Label" type="Label" parent="Slot1/Text"]
+light_mask = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 25.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("9")
+text = "0"
+label_settings = ExtResource("3_bgao5")
+horizontal_alignment = 2
+
+[node name="Slot2" type="TextureRect" parent="."]
+light_mask = 2
+texture_filter = 1
+offset_left = 30.0
+offset_right = 46.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_3afwj")
+
+[node name="Item" type="TextureRect" parent="Slot2"]
+light_mask = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_xxgeg")
+
+[node name="Text" type="Node2D" parent="Slot2"]
+position = Vector2(7, 8)
+scale = Vector2(0.275, 0.275)
+
+[node name="Label" type="Label" parent="Slot2/Text"]
+light_mask = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 25.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("9")
+text = "0"
+label_settings = ExtResource("3_bgao5")
+horizontal_alignment = 2
+
+[node name="Slot3" type="TextureRect" parent="."]
+light_mask = 2
+texture_filter = 1
+offset_left = 45.0
+offset_right = 61.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_ausbb")
+
+[node name="Item" type="TextureRect" parent="Slot3"]
+light_mask = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_53mr3")
+
+[node name="Text" type="Node2D" parent="Slot3"]
+position = Vector2(7, 8)
+scale = Vector2(0.275, 0.275)
+
+[node name="Label" type="Label" parent="Slot3/Text"]
+light_mask = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 25.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("9")
+text = "0"
+label_settings = ExtResource("3_bgao5")
+horizontal_alignment = 2
+
+[node name="Slot4" type="TextureRect" parent="."]
+light_mask = 2
+texture_filter = 1
+offset_left = 60.0
+offset_right = 76.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_l4e30")
+
+[node name="Item" type="TextureRect" parent="Slot4"]
+light_mask = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_v7us3")
+
+[node name="Text" type="Node2D" parent="Slot4"]
+position = Vector2(7, 8)
+scale = Vector2(0.275, 0.275)
+
+[node name="Label" type="Label" parent="Slot4/Text"]
+light_mask = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 25.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("9")
+text = "0"
+label_settings = ExtResource("3_bgao5")
+horizontal_alignment = 2
+
+[node name="Slot5" type="TextureRect" parent="."]
+light_mask = 2
+texture_filter = 1
+offset_left = 75.0
+offset_right = 91.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_g3yjx")
+
+[node name="Item" type="TextureRect" parent="Slot5"]
+light_mask = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_jymxj")
+
+[node name="Text" type="Node2D" parent="Slot5"]
+position = Vector2(7, 8)
+scale = Vector2(0.275, 0.275)
+
+[node name="Label" type="Label" parent="Slot5/Text"]
+light_mask = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 25.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("9")
+text = "0"
+label_settings = ExtResource("3_bgao5")
+horizontal_alignment = 2
+
+[node name="Slot6" type="TextureRect" parent="."]
+light_mask = 2
+texture_filter = 1
+offset_left = 90.0
+offset_right = 106.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_83784")
+
+[node name="Item" type="TextureRect" parent="Slot6"]
+light_mask = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_rupnt")
+
+[node name="Text" type="Node2D" parent="Slot6"]
+position = Vector2(7, 8)
+scale = Vector2(0.275, 0.275)
+
+[node name="Label" type="Label" parent="Slot6/Text"]
+light_mask = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 25.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("9")
+text = "0"
+label_settings = ExtResource("3_bgao5")
+horizontal_alignment = 2
+
+[node name="Slot7" type="TextureRect" parent="."]
+light_mask = 2
+texture_filter = 1
+offset_left = 105.0
+offset_right = 121.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_f5k5o")
+
+[node name="Item" type="TextureRect" parent="Slot7"]
+light_mask = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_6np1e")
+
+[node name="Text" type="Node2D" parent="Slot7"]
+position = Vector2(7, 8)
+scale = Vector2(0.275, 0.275)
+
+[node name="Label" type="Label" parent="Slot7/Text"]
+light_mask = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 25.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("9")
+text = "0"
+label_settings = ExtResource("3_bgao5")
+horizontal_alignment = 2
+
+[node name="Slot8" type="TextureRect" parent="."]
+light_mask = 2
+texture_filter = 1
+offset_left = 120.0
+offset_right = 136.0
+offset_bottom = 16.0
+texture = SubResource("AtlasTexture_43d6j")
+
+[node name="Item" type="TextureRect" parent="Slot8"]
+light_mask = 2
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 18.0
+offset_bottom = 18.0
+scale = Vector2(0.75, 0.75)
+texture = SubResource("AtlasTexture_l52x3")
+
+[node name="Text" type="Node2D" parent="Slot8"]
+position = Vector2(7, 8)
+scale = Vector2(0.275, 0.275)
+
+[node name="Label" type="Label" parent="Slot8/Text"]
+light_mask = 2
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 25.0
+offset_bottom = 30.0
+theme_override_fonts/font = SubResource("9")
+text = "0"
+label_settings = ExtResource("3_bgao5")
+horizontal_alignment = 2

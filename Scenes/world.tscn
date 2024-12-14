@@ -1,0 +1,143 @@
+[gd_scene load_steps=24 format=3 uid="uid://bx428fpproj0d"]
+
+[ext_resource type="Script" path="res://Scripts/map.gd" id="1_1imw5"]
+[ext_resource type="TileSet" uid="uid://3vxowoulb711" path="res://blocks.tres" id="1_1td75"]
+[ext_resource type="Texture2D" uid="uid://biukb2rk33yos" path="res://Graphics/background.png" id="1_wc5mk"]
+[ext_resource type="Script" path="res://Scripts/background.gd" id="2_mdwd6"]
+[ext_resource type="PackedScene" uid="uid://nvg7mfo4u3xm" path="res://Scenes/player.tscn" id="3_ejb0v"]
+[ext_resource type="Script" path="res://Scripts/builder.gd" id="3_tgfoi"]
+[ext_resource type="Texture2D" uid="uid://fuqg0vxctfed" path="res://Graphics/overlay.png" id="4_eqeij"]
+[ext_resource type="Script" path="res://Scripts/block_overlay.gd" id="4_y71fr"]
+[ext_resource type="Texture2D" uid="uid://rxqnfa58v3cs" path="res://Graphics/break_animation.png" id="5_pog27"]
+[ext_resource type="Texture2D" uid="uid://cyrgxpmp3qhfr" path="res://Graphics/texture_atlas.png" id="7_ksa7f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gkok5"]
+size = Vector2(16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kqsbm"]
+atlas = ExtResource("7_ksa7f")
+region = Rect2(112, 112, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sanac"]
+atlas = ExtResource("5_pog27")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olfsx"]
+atlas = ExtResource("5_pog27")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gef41"]
+atlas = ExtResource("5_pog27")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnv8g"]
+atlas = ExtResource("5_pog27")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mt30k"]
+atlas = ExtResource("5_pog27")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3213n"]
+atlas = ExtResource("5_pog27")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6oop"]
+atlas = ExtResource("5_pog27")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpm5u"]
+atlas = ExtResource("5_pog27")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fgtre"]
+atlas = ExtResource("5_pog27")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dnqi"]
+atlas = ExtResource("5_pog27")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1dsep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqsbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sanac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olfsx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gef41")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnv8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mt30k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3213n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6oop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpm5u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fgtre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dnqi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kqsbm")
+}],
+"loop": true,
+"name": &"Break",
+"speed": 10.0
+}]
+
+[node name="World" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_gkok5")
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1_wc5mk")
+script = ExtResource("2_mdwd6")
+
+[node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
+tile_set = ExtResource("1_1td75")
+format = 2
+script = ExtResource("1_1imw5")
+width = 1024
+height = 128
+
+[node name="Builder" type="Node" parent="TileMap"]
+script = ExtResource("3_tgfoi")
+
+[node name="Overlay" type="Node2D" parent="."]
+script = ExtResource("4_y71fr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Overlay"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_1dsep")
+animation = &"Break"
+
+[node name="Sprite2D" type="Sprite2D" parent="Overlay"]
+texture_filter = 1
+texture = ExtResource("4_eqeij")
+
+[node name="Player" parent="." instance=ExtResource("3_ejb0v")]
+godmode = true
+
+[connection signal="body_entered" from="Area2D" to="TileMap/Builder" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="TileMap/Builder" method="_on_area_2d_body_exited"]
