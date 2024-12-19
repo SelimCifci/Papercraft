@@ -6,12 +6,11 @@ var hotbar_slots = 9
 var item_scene = preload("res://Scenes/item.tscn")
 
 @export var selected_slot = 0
-
 @onready var player = get_parent()
 
 func _ready():
 	if player.godmode: Data.items = Data.godmode_items
-	
+
 func _process(_delta):
 	#if Input.is_action_just_pressed("drop"):
 	#	drop()
